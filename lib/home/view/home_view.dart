@@ -12,31 +12,37 @@ class HomeView extends StatelessWidget {
     return PageScaffold(
       child: Padding(
         padding: const EdgeInsets.only(
-          top: 120,
-          bottom: 120,
+          top: 80,
+          left: 100,
+          right: 100,
+          bottom: 80,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: 500,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Lorem Ipsum Dolor Sit Amet',
-                    style: GoogleFonts.poppins(
-                      fontSize: 60,
-                      fontWeight: FontWeight.w700,
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 48),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Lorem Ipsum Dolor Sit Amet',
+                      style: GoogleFonts.poppins(
+                        fontSize: 60,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Explore'),
-                  ),
-                ],
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Explore'),
+                    ),
+                  ],
+                ),
               ),
             ),
+            const SizedBox(width: 80),
             Stack(
               children: [
                 Container(
