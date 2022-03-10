@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gita_gitroops/about_gita/view/about_gita_view.dart';
 import 'package:gita_gitroops/home/view/home_view.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeView.routeName,
       routes: {
         HomeView.routeName: (context) => const HomeView(),
+        AboutGitaView.routeName: (context) => const AboutGitaView(),
       },
     );
   }

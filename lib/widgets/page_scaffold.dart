@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gita_gitroops/widgets/header.dart';
 
 class PageScaffold extends StatelessWidget {
   final Widget child;
@@ -13,13 +14,11 @@ class PageScaffold extends StatelessWidget {
           alignment: Alignment.topCenter,
           child: SizedBox(
             width: 1440,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 30,
-                left: 48,
-                right: 48,
-              ),
-              child: child,
+            child: Column(
+              children: [
+                const Header(),
+                child,
+              ],
             ),
           ),
         ),
