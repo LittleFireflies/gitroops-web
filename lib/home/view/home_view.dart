@@ -13,7 +13,6 @@ class HomeView extends StatelessWidget {
         padding: const EdgeInsets.only(
           top: 80,
           left: 100,
-          right: 100,
           bottom: 80,
         ),
         child: Row(
@@ -21,6 +20,7 @@ class HomeView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
+              flex: 2,
               child: Padding(
                 padding: const EdgeInsets.only(top: 48),
                 child: Column(
@@ -36,31 +36,20 @@ class HomeView extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       child: Text('Explore'),
+                      style: ElevatedButton.styleFrom(
+                        primary: Color(0xFFD7932B),
+                        onPrimary: Colors.white,
+                      ),
                     ),
                   ],
                 ),
               ),
             ),
-            const SizedBox(width: 80),
-            Stack(
-              children: [
-                Container(
-                  width: 600,
-                  height: 800,
-                  color: Color(0xFFE5E5E5),
-                ),
-                Positioned(
-                  top: 40,
-                  left: -75,
-                  child: SizedBox(
-                    width: 560,
-                    height: 600,
-                    child: Placeholder(),
-                  ),
-                ),
-              ],
-              clipBehavior: Clip.none,
-            )
+            const Spacer(),
+            Expanded(
+              flex: 3,
+              child: Image.asset('assets/home_image.png'),
+            ),
           ],
         ),
       ),
