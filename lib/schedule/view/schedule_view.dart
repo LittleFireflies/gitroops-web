@@ -16,7 +16,7 @@ class ScheduleView extends StatelessWidget {
           const Placeholder(),
           Text(
             'Schedule',
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 36,
             ),
           ),

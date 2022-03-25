@@ -3,7 +3,6 @@ import 'package:gita_gitroops/about_gita/view/about_gita_view.dart';
 import 'package:gita_gitroops/about_gitroops/view/about_gitroops_view.dart';
 import 'package:gita_gitroops/home/view/home_view.dart';
 import 'package:gita_gitroops/schedule/view/schedule_view.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -23,7 +22,7 @@ class Header extends StatelessWidget {
         children: [
           Text(
             'GITA SEKAR ANDARINI',
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               fontSize: 36,
               fontWeight: FontWeight.w600,
             ),
@@ -36,7 +35,7 @@ class Header extends StatelessWidget {
                 },
                 child: Text(
                   'Home',
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
                   ),
@@ -52,7 +51,7 @@ class Header extends StatelessWidget {
                 },
                 child: Text(
                   'Schedule',
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
                   ),
@@ -68,7 +67,7 @@ class Header extends StatelessWidget {
                 },
                 child: Text(
                   'About Gita',
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
                   ),
@@ -84,7 +83,7 @@ class Header extends StatelessWidget {
                 },
                 child: Text(
                   'About Us',
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
                   ),

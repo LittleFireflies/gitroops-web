@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AboutGitaView extends StatelessWidget {
   static const routeName = '/about-gita';
@@ -26,14 +25,14 @@ class AboutGitaView extends StatelessWidget {
                       children: [
                         Text(
                           'Gita Sekar Andarini',
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: 36,
                           ),
                         ),
                         const SizedBox(height: 16),
                         Text(
                           'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             fontSize: 24,
                           ),
                         ),
@@ -73,7 +72,7 @@ class AboutGitaView extends StatelessWidget {
                     children: [
                       Text(
                         '165',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 72,
                           height: 1,
                           fontWeight: FontWeight.w600,
@@ -81,7 +80,7 @@ class AboutGitaView extends StatelessWidget {
                       ),
                       Text(
                         'Show',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 36,
                         ),
                       ),
@@ -91,7 +90,7 @@ class AboutGitaView extends StatelessWidget {
                     children: [
                       Text(
                         '6',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 72,
                           height: 1,
                           fontWeight: FontWeight.w600,
@@ -99,7 +98,7 @@ class AboutGitaView extends StatelessWidget {
                       ),
                       Text(
                         'Setlist',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 36,
                         ),
                       ),
@@ -109,7 +108,7 @@ class AboutGitaView extends StatelessWidget {
                     children: [
                       Text(
                         '8',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 72,
                           height: 1,
                           fontWeight: FontWeight.w600,
@@ -117,7 +116,7 @@ class AboutGitaView extends StatelessWidget {
                       ),
                       Text(
                         'Unit Song',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 36,
                         ),
                       ),
