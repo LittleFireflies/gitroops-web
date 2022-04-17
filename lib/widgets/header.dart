@@ -25,6 +25,7 @@ class Header extends StatelessWidget {
             style: TextStyle(
               fontSize: 36,
               fontWeight: FontWeight.w600,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
           Row(
@@ -38,6 +39,7 @@ class Header extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 style: TextButton.styleFrom(
@@ -54,6 +56,7 @@ class Header extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 style: TextButton.styleFrom(
@@ -70,6 +73,7 @@ class Header extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 style: TextButton.styleFrom(
@@ -86,6 +90,7 @@ class Header extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 style: TextButton.styleFrom(

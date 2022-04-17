@@ -3,7 +3,7 @@ import 'package:gita_gitroops/about_gita/view/about_gita_view.dart';
 import 'package:gita_gitroops/about_gitroops/view/about_gitroops_view.dart';
 import 'package:gita_gitroops/home/view/home_view.dart';
 import 'package:gita_gitroops/schedule/view/schedule_view.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:gita_gitroops/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,11 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: const Color(0xFFF7F3F3),
-        textTheme: GoogleFonts.poppinsTextTheme(),
-      ),
+      theme: GitroopsTheme.mainTheme(),
       initialRoute: HomeView.routeName,
       routes: {
         HomeView.routeName: (context) => const HomeView(),

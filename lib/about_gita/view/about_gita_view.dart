@@ -17,7 +17,7 @@ class AboutGitaView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 48),
               child: Row(
                 children: [
-                  const Placeholder(),
+                  Image.asset('assets/profile_image.png'),
                   const SizedBox(width: 100),
                   Expanded(
                     child: Column(
@@ -63,7 +63,7 @@ class AboutGitaView extends StatelessWidget {
             ),
             const SizedBox(height: 48),
             Container(
-              color: const Color(0xFFC4C4C4),
+              color: Theme.of(context).colorScheme.secondary,
               padding: const EdgeInsets.all(36),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -76,12 +76,14 @@ class AboutGitaView extends StatelessWidget {
                           fontSize: 72,
                           height: 1,
                           fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                       Text(
                         'Show',
                         style: TextStyle(
                           fontSize: 36,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ],
@@ -94,12 +96,14 @@ class AboutGitaView extends StatelessWidget {
                           fontSize: 72,
                           height: 1,
                           fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                       Text(
                         'Setlist',
                         style: TextStyle(
                           fontSize: 36,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ],
@@ -112,12 +116,14 @@ class AboutGitaView extends StatelessWidget {
                           fontSize: 72,
                           height: 1,
                           fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                       Text(
                         'Unit Song',
                         style: TextStyle(
                           fontSize: 36,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ],

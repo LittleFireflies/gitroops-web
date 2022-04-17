@@ -31,6 +31,7 @@ class HomeView extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 60,
                         fontWeight: FontWeight.w700,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                     ElevatedButton(
