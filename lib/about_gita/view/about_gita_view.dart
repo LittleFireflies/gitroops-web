@@ -63,75 +63,70 @@ class AboutGitaView extends StatelessWidget {
             ),
             const SizedBox(height: 48),
             Container(
-              color: Theme.of(context).colorScheme.secondary,
               padding: const EdgeInsets.all(36),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        '165',
-                        style: TextStyle(
-                          fontSize: 72,
-                          height: 1,
-                          fontWeight: FontWeight.w600,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                      Text(
-                        'Show',
-                        style: TextStyle(
-                          fontSize: 36,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                    ],
+                children: const [
+                  StatCard(
+                    value: '165',
+                    label: 'Shows',
                   ),
-                  Column(
-                    children: [
-                      Text(
-                        '6',
-                        style: TextStyle(
-                          fontSize: 72,
-                          height: 1,
-                          fontWeight: FontWeight.w600,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                      Text(
-                        'Setlist',
-                        style: TextStyle(
-                          fontSize: 36,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                    ],
+                  StatCard(
+                    value: '6',
+                    label: 'Setlist',
                   ),
-                  Column(
-                    children: [
-                      Text(
-                        '8',
-                        style: TextStyle(
-                          fontSize: 72,
-                          height: 1,
-                          fontWeight: FontWeight.w600,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                      Text(
-                        'Unit Song',
-                        style: TextStyle(
-                          fontSize: 36,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                    ],
+                  StatCard(
+                    value: '8',
+                    label: 'Unit Songs',
                   ),
                 ],
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class StatCard extends StatelessWidget {
+  final String value;
+  final String label;
+
+  const StatCard({
+    Key? key,
+    required this.value,
+    required this.label,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 280,
+      child: Card(
+        color: Theme.of(context).colorScheme.secondary,
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            children: [
+              Text(
+                value,
+                style: TextStyle(
+                  fontSize: 72,
+                  height: 1,
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).colorScheme.onSecondary,
+                ),
+              ),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 36,
+                  color: Theme.of(context).colorScheme.onSecondary,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
