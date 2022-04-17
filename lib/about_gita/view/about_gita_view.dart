@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class AboutGitaView extends StatelessWidget {
   static const routeName = '/about-gita';
@@ -14,7 +15,7 @@ class AboutGitaView extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 48),
+              padding: const EdgeInsets.symmetric(horizontal: 160),
               child: Row(
                 children: [
                   Image.asset('assets/profile_image.png'),
@@ -62,6 +63,8 @@ class AboutGitaView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 48),
+            YoutubeSection(),
+            const SizedBox(height: 48),
             Container(
               padding: const EdgeInsets.all(36),
               child: Row(
@@ -89,6 +92,68 @@ class AboutGitaView extends StatelessWidget {
   }
 }
 
+class YoutubeSection extends StatefulWidget {
+  const YoutubeSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<YoutubeSection> createState() => _YoutubeSectionState();
+}
+
+class _YoutubeSectionState extends State<YoutubeSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 160.0),
+      child: Column(
+        children: [
+          SizedBox(
+            child: YoutubePlayerIFrame(
+              controller: YoutubePlayerController(
+                initialVideoId: 'd1Hr6J22FWk',
+                params: YoutubePlayerParams(
+                  showControls: true,
+                  showFullscreenButton: true,
+                ),
+              ),
+              aspectRatio: 16 / 9,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Row(
+            children: [
+              Expanded(
+                child: YoutubePlayerIFrame(
+                  controller: YoutubePlayerController(
+                    initialVideoId: '5o0ockfSOK4',
+                    params: YoutubePlayerParams(
+                      showControls: true,
+                      showFullscreenButton: true,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: YoutubePlayerIFrame(
+                  controller: YoutubePlayerController(
+                    initialVideoId: 'iMjZNl0LFYw',
+                    params: YoutubePlayerParams(
+                      showControls: true,
+                      showFullscreenButton: true,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class StatCard extends StatelessWidget {
   final String value;
   final String label;
@@ -105,6 +170,7 @@ class StatCard extends StatelessWidget {
       width: 280,
       child: Card(
         color: Theme.of(context).colorScheme.secondary,
+        elevation: 4.0,
         child: Padding(
           padding: const EdgeInsets.all(32.0),
           child: Column(
