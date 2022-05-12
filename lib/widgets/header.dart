@@ -30,76 +30,65 @@ class Header extends StatelessWidget {
           ),
           Row(
             children: [
-              TextButton(
+              NavItem(
+                text: 'Home',
                 onPressed: () {
                   Navigator.pushNamed(context, HomeView.routeName);
                 },
-                child: Text(
-                  'Home',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                style: TextButton.styleFrom(
-                  primary: Colors.black,
-                ),
               ),
-              const SizedBox(width: 48),
-              TextButton(
+              NavItem(
+                text: 'Schedule',
                 onPressed: () {
                   Navigator.pushNamed(context, ScheduleView.routeName);
                 },
-                child: Text(
-                  'Schedule',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                style: TextButton.styleFrom(
-                  primary: Colors.black,
-                ),
               ),
-              const SizedBox(width: 48),
-              TextButton(
+              NavItem(
+                text: 'About Gita',
                 onPressed: () {
                   Navigator.pushNamed(context, AboutGitaView.routeName);
                 },
-                child: Text(
-                  'About Gita',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                style: TextButton.styleFrom(
-                  primary: Colors.black,
-                ),
               ),
-              const SizedBox(width: 48),
-              TextButton(
+              NavItem(
+                text: 'About Us',
                 onPressed: () {
                   Navigator.pushNamed(context, AboutGitroopsView.routeName);
                 },
-                child: Text(
-                  'About Us',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                style: TextButton.styleFrom(
-                  primary: Colors.black,
-                ),
               ),
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+class NavItem extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+
+  const NavItem({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w500,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
+        style: TextButton.styleFrom(
+          primary: Colors.black,
+        ),
       ),
     );
   }
