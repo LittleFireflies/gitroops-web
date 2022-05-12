@@ -18,7 +18,6 @@ class Header extends StatelessWidget {
         right: 48,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'GITA SEKAR ANDARINI',
@@ -28,34 +27,31 @@ class Header extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
             ),
           ),
-          Row(
-            children: [
-              NavItem(
-                text: 'Home',
-                onPressed: () {
-                  Navigator.pushNamed(context, HomeView.routeName);
-                },
-              ),
-              NavItem(
-                text: 'Schedule',
-                onPressed: () {
-                  Navigator.pushNamed(context, ScheduleView.routeName);
-                },
-              ),
-              NavItem(
-                text: 'About Gita',
-                onPressed: () {
-                  Navigator.pushNamed(context, AboutGitaView.routeName);
-                },
-              ),
-              NavItem(
-                text: 'About Us',
-                onPressed: () {
-                  Navigator.pushNamed(context, AboutGitroopsView.routeName);
-                },
-              ),
-            ],
-          )
+          const Spacer(),
+          NavItem(
+            text: 'Home',
+            onPressed: () {
+              Navigator.pushNamed(context, HomeView.routeName);
+            },
+          ),
+          NavItem(
+            text: 'Schedule',
+            onPressed: () {
+              Navigator.pushNamed(context, ScheduleView.routeName);
+            },
+          ),
+          NavItem(
+            text: 'About Gita',
+            onPressed: () {
+              Navigator.pushNamed(context, AboutGitaView.routeName);
+            },
+          ),
+          NavItem(
+            text: 'About Us',
+            onPressed: () {
+              Navigator.pushNamed(context, AboutGitroopsView.routeName);
+            },
+          ),
         ],
       ),
     );
