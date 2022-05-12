@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gita_gitroops/about_gita/widgets/main_section/main_section.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
@@ -10,83 +11,33 @@ class AboutGitaView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageScaffold(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 100),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 160),
-              child: Row(
-                children: [
-                  Image.asset('assets/profile_image.png'),
-                  const SizedBox(width: 100),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Gita Sekar Andarini',
-                          style: TextStyle(
-                            fontSize: 36,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        Text(
-                          'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
-                          style: TextStyle(
-                            fontSize: 24,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Row(
-                          children: const [
-                            ElevatedButton(
-                              onPressed: null,
-                              child: Text('Medsos'),
-                            ),
-                            const SizedBox(width: 8),
-                            ElevatedButton(
-                              onPressed: null,
-                              child: Text('Medsos'),
-                            ),
-                            const SizedBox(width: 8),
-                            ElevatedButton(
-                              onPressed: null,
-                              child: Text('Medsos'),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
+      child: Column(
+        children: [
+          const MainSection(),
+          const SizedBox(height: 48),
+          const YoutubeSection(),
+          const SizedBox(height: 48),
+          Container(
+            padding: const EdgeInsets.all(36),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                StatCard(
+                  value: '165',
+                  label: 'Shows',
+                ),
+                StatCard(
+                  value: '6',
+                  label: 'Setlist',
+                ),
+                StatCard(
+                  value: '8',
+                  label: 'Unit Songs',
+                ),
+              ],
             ),
-            const SizedBox(height: 48),
-            YoutubeSection(),
-            const SizedBox(height: 48),
-            Container(
-              padding: const EdgeInsets.all(36),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  StatCard(
-                    value: '165',
-                    label: 'Shows',
-                  ),
-                  StatCard(
-                    value: '6',
-                    label: 'Setlist',
-                  ),
-                  StatCard(
-                    value: '8',
-                    label: 'Unit Songs',
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -112,7 +63,7 @@ class _YoutubeSectionState extends State<YoutubeSection> {
             child: YoutubePlayerIFrame(
               controller: YoutubePlayerController(
                 initialVideoId: 'd1Hr6J22FWk',
-                params: YoutubePlayerParams(
+                params: const YoutubePlayerParams(
                   showControls: true,
                   showFullscreenButton: true,
                 ),
@@ -127,7 +78,7 @@ class _YoutubeSectionState extends State<YoutubeSection> {
                 child: YoutubePlayerIFrame(
                   controller: YoutubePlayerController(
                     initialVideoId: '5o0ockfSOK4',
-                    params: YoutubePlayerParams(
+                    params: const YoutubePlayerParams(
                       showControls: true,
                       showFullscreenButton: true,
                     ),
@@ -139,7 +90,7 @@ class _YoutubeSectionState extends State<YoutubeSection> {
                 child: YoutubePlayerIFrame(
                   controller: YoutubePlayerController(
                     initialVideoId: 'iMjZNl0LFYw',
-                    params: YoutubePlayerParams(
+                    params: const YoutubePlayerParams(
                       showControls: true,
                       showFullscreenButton: true,
                     ),
