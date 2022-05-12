@@ -10,13 +10,15 @@ class PageScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: !ResponsiveWidget.isLargeScreen(context)
+      appBar: ResponsiveWidget.getScreenSizeId(context) < ResponsiveWidget.large
           ? AppBar(
               title: const Text('Gita Sekar Andarini'),
               centerTitle: false,
             )
           : null,
-      drawer: !ResponsiveWidget.isLargeScreen(context) ? const Drawer() : null,
+      drawer: ResponsiveWidget.getScreenSizeId(context) < ResponsiveWidget.large
+          ? const Drawer()
+          : null,
       body: SingleChildScrollView(
         child: Align(
           alignment: Alignment.topCenter,
@@ -24,9 +26,8 @@ class PageScaffold extends StatelessWidget {
             width: 1440,
             child: Column(
               children: [
-                if (ResponsiveWidget.isLargeScreen(context)) ...[
-                  const Header()
-                ],
+                if (ResponsiveWidget.getScreenSizeId(context) >
+                    ResponsiveWidget.medium) ...[const Header()],
                 child,
               ],
             ),
