@@ -63,7 +63,7 @@ class _YoutubeSectionState extends State<YoutubeSection> {
     );
   }
 
-  _getHorizontalPadding(BuildContext context) {
+  double _getHorizontalPadding(BuildContext context) {
     if (ResponsiveWidget.getScreenSizeId(context) == ResponsiveWidget.large) {
       return 160;
     } else if (ResponsiveWidget.getScreenSizeId(context) ==

@@ -22,33 +22,36 @@ class PageScaffold extends StatelessWidget {
           : null,
       drawer: ResponsiveWidget.getScreenSizeId(context) < ResponsiveWidget.large
           ? Drawer(
-              child: Column(
-                children: [
-                  ListTile(
-                    title: Text('Home'),
-                    onTap: () {
-                      Navigator.pushNamed(context, HomeView.routeName);
-                    },
-                  ),
-                  ListTile(
-                    title: Text('Schedule'),
-                    onTap: () {
-                      Navigator.pushNamed(context, ScheduleView.routeName);
-                    },
-                  ),
-                  ListTile(
-                    title: Text('About Gita'),
-                    onTap: () {
-                      Navigator.pushNamed(context, AboutGitaView.routeName);
-                    },
-                  ),
-                  ListTile(
-                    title: Text('About Us'),
-                    onTap: () {
-                      Navigator.pushNamed(context, AboutGitroopsView.routeName);
-                    },
-                  ),
-                ],
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text('Home'),
+                      onTap: () {
+                        Navigator.pushNamed(context, HomeView.routeName);
+                      },
+                    ),
+                    ListTile(
+                      title: Text('Schedule'),
+                      onTap: () {
+                        Navigator.pushNamed(context, ScheduleView.routeName);
+                      },
+                    ),
+                    ListTile(
+                      title: Text('About Gita'),
+                      onTap: () {
+                        Navigator.pushNamed(context, AboutGitaView.routeName);
+                      },
+                    ),
+                    ListTile(
+                      title: Text('About Us'),
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, AboutGitroopsView.routeName);
+                      },
+                    ),
+                  ],
+                ),
               ),
             )
           : null,
