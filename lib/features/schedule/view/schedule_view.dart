@@ -9,17 +9,61 @@ class ScheduleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageScaffold(
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          const Placeholder(),
-          Text(
-            'Schedule',
-            style: TextStyle(
-              fontSize: 36,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 80.0),
+        child: Column(
+          children: [
+            Image.asset('assets/banner_theater.png'),
+            const SizedBox(height: 40),
+            const Text(
+              'June 2022',
+              style: TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.w700,
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: 40),
+            SizedBox(
+              width: 600,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Seishun Girls',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 28,
+                          ),
+                        ),
+                        Text(
+                          'Minggu, 24 April 2022',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 24,
+                          ),
+                        ),
+                        Text(
+                          '16.30 - 17.30',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 24,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Beli'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
