@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gita_gitroops/features/about_gita/view/about_gita_view.dart';
-import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_view.dart';
-import 'package:gita_gitroops/features/home/view/home_view.dart';
-import 'package:gita_gitroops/features/schedule/view/schedule_view.dart';
+import 'package:gita_gitroops/features/about_gita/view/about_gita_page.dart';
+import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_page.dart';
+import 'package:gita_gitroops/features/home/view/home_page.dart';
+import 'package:gita_gitroops/features/schedule/view/schedule_page.dart';
 import 'package:gita_gitroops/widgets/header.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 
@@ -28,26 +28,26 @@ class PageScaffold extends StatelessWidget {
                     ListTile(
                       title: Text('Home'),
                       onTap: () {
-                        Navigator.pushNamed(context, HomeView.routeName);
+                        Navigator.pushNamed(context, HomePage.routeName);
                       },
                     ),
                     ListTile(
                       title: Text('Schedule'),
                       onTap: () {
-                        Navigator.pushNamed(context, ScheduleView.routeName);
+                        Navigator.pushNamed(context, SchedulePage.routeName);
                       },
                     ),
                     ListTile(
                       title: Text('About Gita'),
                       onTap: () {
-                        Navigator.pushNamed(context, AboutGitaView.routeName);
+                        Navigator.pushNamed(context, AboutGitaPage.routeName);
                       },
                     ),
                     ListTile(
                       title: Text('About Us'),
                       onTap: () {
                         Navigator.pushNamed(
-                            context, AboutGitroopsView.routeName);
+                            context, AboutGitroopsPage.routeName);
                       },
                     ),
                   ],

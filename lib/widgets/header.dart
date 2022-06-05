@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gita_gitroops/features/about_gita/view/about_gita_view.dart';
-import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_view.dart';
-import 'package:gita_gitroops/features/home/view/home_view.dart';
-import 'package:gita_gitroops/features/schedule/view/schedule_view.dart';
+import 'package:gita_gitroops/features/about_gita/view/about_gita_page.dart';
+import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_page.dart';
+import 'package:gita_gitroops/features/home/view/home_page.dart';
+import 'package:gita_gitroops/features/schedule/view/schedule_page.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -31,25 +31,25 @@ class Header extends StatelessWidget {
           NavItem(
             text: 'Home',
             onPressed: () {
-              Navigator.pushNamed(context, HomeView.routeName);
+              Navigator.pushNamed(context, HomePage.routeName);
             },
           ),
           NavItem(
             text: 'Schedule',
             onPressed: () {
-              Navigator.pushNamed(context, ScheduleView.routeName);
+              Navigator.pushNamed(context, SchedulePage.routeName);
             },
           ),
           NavItem(
             text: 'About Gita',
             onPressed: () {
-              Navigator.pushNamed(context, AboutGitaView.routeName);
+              Navigator.pushNamed(context, AboutGitaPage.routeName);
             },
           ),
           NavItem(
             text: 'About Us',
             onPressed: () {
-              Navigator.pushNamed(context, AboutGitroopsView.routeName);
+              Navigator.pushNamed(context, AboutGitroopsPage.routeName);
             },
           ),
         ],

@@ -5,10 +5,10 @@ import 'package:gita_gitroops/features/about_gita/widgets/youtube/youtube_sectio
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 
-class AboutGitaView extends StatelessWidget {
+class AboutGitaPage extends StatelessWidget {
   static const routeName = '/about-gita';
 
-  const AboutGitaView({Key? key}) : super(key: key);
+  const AboutGitaPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

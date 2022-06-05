@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 
-class HomeView extends StatelessWidget {
+class HomePage extends StatelessWidget {
   static const routeName = '/';
 
-  const HomeView({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
