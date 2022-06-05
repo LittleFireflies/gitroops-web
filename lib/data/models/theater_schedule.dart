@@ -8,11 +8,13 @@ class TheaterSchedule extends Equatable {
   final String title;
   final String date;
   final String time;
+  final String link;
 
   const TheaterSchedule({
     required this.title,
     required this.date,
     required this.time,
+    required this.link,
   });
 
   static TheaterSchedule fromJson(Map<String, dynamic> json) =>
@@ -23,5 +25,6 @@ class TheaterSchedule extends Equatable {
         title,
         date,
         time,
+        link,
       ];
 }

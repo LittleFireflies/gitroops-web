@@ -1,10 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gita_gitroops/data/api/api_service.dart';
+import 'package:gita_gitroops/features/schedule/bloc/schedule_cubit.dart';
+import 'package:gita_gitroops/features/schedule/widgets/theater_schedule_tile.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
+import 'package:http/http.dart';
 
 class SchedulePage extends StatelessWidget {
   static const routeName = '/schedule';
 
   const SchedulePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => ScheduleCubit(
+        ApiService(
+          Client(),
+        ),
+      )..loadSchedules(),
+      child: const ScheduleView(),
+    );
+  }
+}
+
+class ScheduleView extends StatelessWidget {
+  const ScheduleView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,45 +44,27 @@ class SchedulePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            SizedBox(
-              width: 600,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'Seishun Girls',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 28,
-                          ),
-                        ),
-                        Text(
-                          'Minggu, 24 April 2022',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 24,
-                          ),
-                        ),
-                        Text(
-                          '16.30 - 17.30',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 24,
-                          ),
-                        ),
-                      ],
-                    ),
+            BlocBuilder<ScheduleCubit, ScheduleState>(
+                builder: (context, state) {
+              if (state is ScheduleLoaded) {
+                return SizedBox(
+                  width: 600,
+                  child: Column(
+                    children: state.schedules
+                        .map((schedule) =>
+                            TheaterScheduleTile(schedule: schedule))
+                        .toList(),
                   ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Beli'),
-                  ),
-                ],
-              ),
-            ),
+                );
+              } else if (state is ScheduleEmpty) {
+                return const Text(
+                  'Tidak ada jadwal tersedia saat ini',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+                );
+              } else {
+                return const CircularProgressIndicator();
+              }
+            }),
           ],
         ),
       ),
