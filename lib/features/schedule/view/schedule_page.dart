@@ -4,6 +4,7 @@ import 'package:gita_gitroops/data/api/api_service.dart';
 import 'package:gita_gitroops/features/schedule/bloc/schedule_cubit.dart';
 import 'package:gita_gitroops/features/schedule/widgets/theater_schedule_tile.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
+import 'package:gita_gitroops/widgets/responsive_widget.dart';
 import 'package:http/http.dart';
 
 class SchedulePage extends StatelessWidget {
@@ -31,7 +32,17 @@ class ScheduleView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageScaffold(
       child: Padding(
-        padding: const EdgeInsets.only(top: 80.0),
+        padding: ResponsiveWidget.isSmallScreen(context)
+            ? const EdgeInsets.only(
+                top: 16,
+                left: 16,
+                right: 16,
+              )
+            : const EdgeInsets.only(
+                top: 80.0,
+                left: 64,
+                right: 64,
+              ),
         child: Column(
           children: [
             Image.asset('assets/banner_theater.png'),
