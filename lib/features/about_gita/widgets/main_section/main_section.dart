@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gita_gitroops/about_gita/widgets/main_section/responsive/large.dart';
-import 'package:gita_gitroops/about_gita/widgets/main_section/responsive/medium.dart';
-import 'package:gita_gitroops/about_gita/widgets/main_section/responsive/small.dart';
+import 'package:gita_gitroops/features/about_gita/widgets/main_section/responsive/large.dart';
+import 'package:gita_gitroops/features/about_gita/widgets/main_section/responsive/medium.dart';
+import 'package:gita_gitroops/features/about_gita/widgets/main_section/responsive/small.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 
 class MainSection extends StatelessWidget {

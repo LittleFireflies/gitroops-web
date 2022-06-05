@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gita_gitroops/about_gita/view/about_gita_view.dart';
-import 'package:gita_gitroops/about_gitroops/view/about_gitroops_view.dart';
-import 'package:gita_gitroops/home/view/home_view.dart';
-import 'package:gita_gitroops/schedule/view/schedule_view.dart';
+import 'package:gita_gitroops/features/about_gita/view/about_gita_view.dart';
+import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_view.dart';
+import 'package:gita_gitroops/features/home/view/home_view.dart';
+import 'package:gita_gitroops/features/schedule/view/schedule_view.dart';
 
 class Header extends StatelessWidget {
   const Header({

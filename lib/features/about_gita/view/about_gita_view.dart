@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gita_gitroops/about_gita/widgets/main_section/main_section.dart';
-import 'package:gita_gitroops/about_gita/widgets/stats/stats_section.dart';
-import 'package:gita_gitroops/about_gita/widgets/youtube/youtube_section.dart';
+import 'package:gita_gitroops/features/about_gita/widgets/main_section/main_section.dart';
+import 'package:gita_gitroops/features/about_gita/widgets/stats/stats_section.dart';
+import 'package:gita_gitroops/features/about_gita/widgets/youtube/youtube_section.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 
