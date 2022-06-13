@@ -12,7 +12,7 @@ class GitroopsColorScheme {
     onError: Colors.white,
     background: Color(0xFFF7F3F3),
     onBackground: Colors.black,
-    surface: Color(0xFFF7F3F3),
-    onSurface: Colors.black,
+    surface: GitroopsColors.grey,
+    onSurface: Colors.white,
   );
 }
