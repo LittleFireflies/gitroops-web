@@ -26,25 +26,25 @@ class PageScaffold extends StatelessWidget {
                 child: Column(
                   children: [
                     ListTile(
-                      title: Text('Home'),
+                      title: const Text('Home'),
                       onTap: () {
                         Navigator.pushNamed(context, HomePage.routeName);
                       },
                     ),
                     ListTile(
-                      title: Text('Schedule'),
+                      title: const Text('Schedule'),
                       onTap: () {
                         Navigator.pushNamed(context, SchedulePage.routeName);
                       },
                     ),
                     ListTile(
-                      title: Text('About Gita'),
+                      title: const Text('About Gita'),
                       onTap: () {
                         Navigator.pushNamed(context, AboutGitaPage.routeName);
                       },
                     ),
                     ListTile(
-                      title: Text('About Us'),
+                      title: const Text('About Us'),
                       onTap: () {
                         Navigator.pushNamed(
                             context, AboutGitroopsPage.routeName);

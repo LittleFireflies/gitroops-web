@@ -11,8 +11,8 @@ class AboutGitroopsPage extends StatelessWidget {
     return PageScaffold(
       child: Stack(
         alignment: Alignment.center,
-        children: [
-          const Placeholder(),
+        children: const [
+          Placeholder(),
           Text(
             'About Gitroops',
             style: TextStyle(

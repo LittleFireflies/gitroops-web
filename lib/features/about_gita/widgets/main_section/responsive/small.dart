@@ -31,12 +31,12 @@ class SmallMainSection extends StatelessWidget {
                 onPressed: null,
                 child: Text('Medsos'),
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: 8),
               ElevatedButton(
                 onPressed: null,
                 child: Text('Medsos'),
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: 8),
               ElevatedButton(
                 onPressed: null,
                 child: Text('Medsos'),

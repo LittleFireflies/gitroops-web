@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageScaffold(
+    return const PageScaffold(
       child: ResponsiveWidget(
         largeScreen: LargeHomeView(),
         smallScreen: SmallHomeView(),
@@ -46,9 +46,9 @@ class SmallHomeView extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text('Explore'),
+                  child: const Text('Explore'),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFFD7932B),
+                    primary: const Color(0xFFD7932B),
                     onPrimary: Colors.white,
                   ),
                 ),
@@ -93,9 +93,9 @@ class LargeHomeView extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Explore'),
+                    child: const Text('Explore'),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFD7932B),
+                      primary: const Color(0xFFD7932B),
                       onPrimary: Colors.white,
                     ),
                   ),
