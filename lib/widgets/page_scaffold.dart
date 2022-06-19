@@ -28,24 +28,28 @@ class PageScaffold extends StatelessWidget {
                     ListTile(
                       title: const Text('Home'),
                       onTap: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(context, HomePage.routeName);
                       },
                     ),
                     ListTile(
                       title: const Text('Schedule'),
                       onTap: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(context, SchedulePage.routeName);
                       },
                     ),
                     ListTile(
                       title: const Text('About Gita'),
                       onTap: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(context, AboutGitaPage.routeName);
                       },
                     ),
                     ListTile(
                       title: const Text('About Us'),
                       onTap: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(
                             context, AboutGitroopsPage.routeName);
                       },
