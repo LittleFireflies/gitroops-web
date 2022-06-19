@@ -13,6 +13,6 @@ class GitroopsColorScheme {
     background: Color(0xFFF7F3F3),
     onBackground: Colors.black,
     surface: GitroopsColors.grey,
-    onSurface: Colors.white,
+    onSurface: Colors.grey,
   );
 }

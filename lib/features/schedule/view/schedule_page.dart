@@ -6,6 +6,7 @@ import 'package:gita_gitroops/features/schedule/widgets/theater_schedule_tile.da
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 
 class SchedulePage extends StatelessWidget {
   static const routeName = '/schedule';
@@ -20,13 +21,15 @@ class SchedulePage extends StatelessWidget {
           Client(),
         ),
       )..loadSchedules(),
-      child: const ScheduleView(),
+      child: ScheduleView(),
     );
   }
 }
 
 class ScheduleView extends StatelessWidget {
-  const ScheduleView({Key? key}) : super(key: key);
+  final dateFormat = DateFormat('MMMM y');
+
+  ScheduleView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +50,9 @@ class ScheduleView extends StatelessWidget {
           children: [
             Image.asset('assets/banner_theater.png'),
             const SizedBox(height: 40),
-            const Text(
-              'June 2022',
-              style: TextStyle(
+            Text(
+              dateFormat.format(DateTime.now()),
+              style: const TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.w700,
               ),
