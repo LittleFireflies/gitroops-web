@@ -12,7 +12,7 @@ class SmallGitroopsGallerySection extends StatelessWidget {
         children: [
           Image.asset('assets/fanbase_1.png'),
           const SizedBox(height: 8),
-          Image.asset('assets/fanbase_1.png'),
+          Image.asset('assets/fanbase_2.jpg'),
         ],
       ),
     );

@@ -14,7 +14,7 @@ class LargeGitroopsGallerySection extends StatelessWidget {
         children: [
           Expanded(child: Image.asset('assets/fanbase_1.png')),
           const SizedBox(width: 16),
-          Expanded(child: Image.asset('assets/fanbase_1.png')),
+          Expanded(child: Image.asset('assets/fanbase_2.jpg')),
         ],
       ),
     );
