@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gita_gitroops/features/about_gita/view/about_gita_page.dart';
+import 'package:gita_gitroops/utils/constants.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 
@@ -35,24 +37,7 @@ class SmallHomeView extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Lorem Ipsum Dolor Sit Amet',
-                  style: TextStyle(
-                    fontSize: _getFontSize(context),
-                    fontWeight: FontWeight.w700,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Explore'),
-                  style: ElevatedButton.styleFrom(
-                    primary: const Color(0xFFD7932B),
-                    onPrimary: Colors.white,
-                  ),
-                ),
-              ],
+              children: _widgetList(context),
             ),
           ),
         ),
@@ -77,39 +62,19 @@ class LargeHomeView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Padding(
               padding: const EdgeInsets.only(top: 48),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Lorem Ipsum Dolor Sit Amet',
-                    style: TextStyle(
-                      fontSize: _getFontSize(context),
-                      fontWeight: FontWeight.w700,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Explore'),
-                    style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFFD7932B),
-                      onPrimary: Colors.white,
-                    ),
-                  ),
-                ],
+                children: _widgetList(context),
               ),
             ),
           ),
           const Spacer(),
-          Visibility(
-            visible: !ResponsiveWidget.isSmallScreen(context),
-            child: Expanded(
-              flex: 3,
-              child: Image.asset('assets/home_image.png'),
-            ),
+          Expanded(
+            flex: 4,
+            child: Image.asset('assets/home_image.png'),
           ),
         ],
       ),
@@ -117,12 +82,41 @@ class LargeHomeView extends StatelessWidget {
   }
 }
 
+List<Widget> _widgetList(BuildContext context) {
+  return [
+    Padding(
+      padding: ResponsiveWidget.isSmallScreen(context)
+          ? EdgeInsets.zero
+          : const EdgeInsets.only(top: 60),
+      child: Text(
+        AppConstants.jikoshoukai,
+        style: TextStyle(
+          fontSize: _getFontSize(context),
+          fontWeight: FontWeight.w700,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+      ),
+    ),
+    SizedBox(height: ResponsiveWidget.isSmallScreen(context) ? 0 : 16),
+    ElevatedButton(
+      onPressed: () {
+        Navigator.pushNamed(context, AboutGitaPage.routeName);
+      },
+      child: const Text('Explore'),
+      style: ElevatedButton.styleFrom(
+        primary: const Color(0xFFD7932B),
+        onPrimary: Colors.white,
+      ),
+    ),
+  ];
+}
+
 double _getFontSize(BuildContext context) {
   if (ResponsiveWidget.isSmallScreen(context)) {
     return 24;
   } else if (ResponsiveWidget.isMediumScreen(context)) {
-    return 48;
+    return 36;
   } else {
-    return 60;
+    return 36;
   }
 }
