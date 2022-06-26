@@ -16,7 +16,7 @@ class AboutGitaPage extends StatelessWidget {
       child: Column(
         children: [
           const MainSection(),
-          SizedBox(height: ResponsiveWidget.isLargeScreen(context) ? 48 : 24),
+          SizedBox(height: ResponsiveWidget.isLargeScreen(context) ? 60 : 24),
           const YoutubeSection(),
           SizedBox(height: ResponsiveWidget.isLargeScreen(context) ? 48 : 24),
           const StatsSection(),

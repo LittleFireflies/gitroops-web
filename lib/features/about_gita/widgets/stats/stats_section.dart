@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gita_gitroops/utils/constants.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 
 class StatsSection extends StatelessWidget {
@@ -6,15 +7,15 @@ class StatsSection extends StatelessWidget {
 
   final statCards = const [
     StatCard(
-      value: '165',
+      value: AppConstants.showsCount,
       label: 'Shows',
     ),
     StatCard(
-      value: '6',
+      value: AppConstants.setlistCount,
       label: 'Setlist',
     ),
     StatCard(
-      value: '8',
+      value: AppConstants.unitSongCount,
       label: 'Unit Songs',
     ),
   ];

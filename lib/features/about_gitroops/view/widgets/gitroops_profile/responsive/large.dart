@@ -50,23 +50,23 @@ class LargeGitroopsProfileSection extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {
                           js.context
-                              .callMethod('open', [AppConstants.formLink]);
+                              .callMethod('open', [AppConstants.formGitroops]);
                         },
                         child: const Text('Link Form'),
                       ),
                       const SizedBox(width: 40),
                       ElevatedButton(
                         onPressed: () {
-                          js.context
-                              .callMethod('open', [AppConstants.instagramLink]);
+                          js.context.callMethod(
+                              'open', [AppConstants.instagramGitroops]);
                         },
                         child: const Text('Link IG'),
                       ),
                       const SizedBox(width: 40),
                       ElevatedButton(
                         onPressed: () {
-                          js.context
-                              .callMethod('open', [AppConstants.twitterLink]);
+                          js.context.callMethod(
+                              'open', [AppConstants.twitterGitroops]);
                         },
                         child: const Text('Link Twitter'),
                       ),

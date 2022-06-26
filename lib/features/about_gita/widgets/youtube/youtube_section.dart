@@ -18,6 +18,14 @@ class _YoutubeSectionState extends State<YoutubeSection> {
       padding: EdgeInsets.symmetric(horizontal: _getHorizontalPadding(context)),
       child: Column(
         children: [
+          const Text(
+            'KENALAN SAMA KAK GITA YUK!!!',
+            style: TextStyle(
+              fontSize: 36,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 22),
           SizedBox(
             child: YoutubePlayerIFrame(
               controller: YoutubePlayerController(

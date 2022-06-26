@@ -1,4 +1,7 @@
+import 'dart:js' as js;
+
 import 'package:flutter/material.dart';
+import 'package:gita_gitroops/utils/constants.dart';
 
 class LargeMainSection extends StatelessWidget {
   const LargeMainSection({Key? key}) : super(key: key);
@@ -8,6 +11,7 @@ class LargeMainSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(160, 100, 160, 0),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset('assets/profile_image.png'),
           const SizedBox(width: 100),
@@ -19,31 +23,41 @@ class LargeMainSection extends StatelessWidget {
                   'Gita Sekar Andarini',
                   style: TextStyle(
                     fontSize: 36,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
+                  AppConstants.aboutGita,
                   style: TextStyle(
                     fontSize: 24,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 24),
                 Row(
-                  children: const [
+                  children: [
                     ElevatedButton(
-                      onPressed: null,
-                      child: Text('Medsos'),
+                      onPressed: () {
+                        js.context
+                            .callMethod('open', [AppConstants.twitterGita]);
+                      },
+                      child: const Text('Twitter'),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 40),
                     ElevatedButton(
-                      onPressed: null,
-                      child: Text('Medsos'),
+                      onPressed: () {
+                        js.context
+                            .callMethod('open', [AppConstants.instagramGita]);
+                      },
+                      child: const Text('Instagram'),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 40),
                     ElevatedButton(
-                      onPressed: null,
-                      child: Text('Medsos'),
+                      onPressed: () {
+                        js.context
+                            .callMethod('open', [AppConstants.tiktokGita]);
+                      },
+                      child: const Text('Tiktok'),
                     ),
                   ],
                 ),

@@ -1,4 +1,7 @@
+import 'dart:js' as js;
+
 import 'package:flutter/material.dart';
+import 'package:gita_gitroops/utils/constants.dart';
 
 class MediumMainSection extends StatelessWidget {
   const MediumMainSection({Key? key}) : super(key: key);
@@ -14,11 +17,12 @@ class MediumMainSection extends StatelessWidget {
             'Gita Sekar Andarini',
             style: TextStyle(
               fontSize: 36,
+              fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 16),
           const Text(
-            'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
+            AppConstants.aboutGita,
             style: TextStyle(
               fontSize: 24,
             ),
@@ -26,20 +30,26 @@ class MediumMainSection extends StatelessWidget {
           const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               ElevatedButton(
-                onPressed: null,
-                child: Text('Medsos'),
+                onPressed: () {
+                  js.context.callMethod('open', [AppConstants.twitterGita]);
+                },
+                child: const Text('Twitter'),
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               ElevatedButton(
-                onPressed: null,
-                child: Text('Medsos'),
+                onPressed: () {
+                  js.context.callMethod('open', [AppConstants.instagramGita]);
+                },
+                child: const Text('Instagram'),
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               ElevatedButton(
-                onPressed: null,
-                child: Text('Medsos'),
+                onPressed: () {
+                  js.context.callMethod('open', [AppConstants.tiktokGita]);
+                },
+                child: const Text('Tiktok'),
               ),
             ],
           ),
