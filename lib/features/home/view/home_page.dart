@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const PageScaffold(
+      scrollable: false,
       child: ResponsiveWidget(
         largeScreen: LargeHomeView(),
         smallScreen: SmallHomeView(),
@@ -27,16 +28,25 @@ class SmallHomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('assets/home_image.png'),
         Positioned(
-          bottom: 16,
-          left: 16,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Image.asset(
+            'assets/bawah_portrait.png',
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        Image.asset('assets/home_image.png'),
+        Center(
           child: Container(
             width: MediaQuery.of(context).size.width,
             color: Theme.of(context).backgroundColor,
+            margin: const EdgeInsets.only(bottom: 24),
             padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: _widgetList(context),
             ),
           ),
@@ -55,7 +65,6 @@ class LargeHomeView extends StatelessWidget {
       padding: const EdgeInsets.only(
         top: 80,
         left: 100,
-        bottom: 80,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -113,7 +122,7 @@ List<Widget> _widgetList(BuildContext context) {
 
 double _getFontSize(BuildContext context) {
   if (ResponsiveWidget.isSmallScreen(context)) {
-    return 24;
+    return 20;
   } else if (ResponsiveWidget.isMediumScreen(context)) {
     return 36;
   } else {

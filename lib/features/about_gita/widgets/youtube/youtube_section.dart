@@ -30,10 +30,7 @@ class _YoutubeSectionState extends State<YoutubeSection> {
             child: YoutubePlayerIFrame(
               controller: YoutubePlayerController(
                 initialVideoId: 'd1Hr6J22FWk',
-                params: const YoutubePlayerParams(
-                  showControls: true,
-                  showFullscreenButton: true,
-                ),
+                params: _getYoutubePlayerParams(),
               ),
               aspectRatio: 16 / 9,
             ),
@@ -45,10 +42,7 @@ class _YoutubeSectionState extends State<YoutubeSection> {
                 child: YoutubePlayerIFrame(
                   controller: YoutubePlayerController(
                     initialVideoId: '5o0ockfSOK4',
-                    params: const YoutubePlayerParams(
-                      showControls: true,
-                      showFullscreenButton: true,
-                    ),
+                    params: _getYoutubePlayerParams(),
                   ),
                 ),
               ),
@@ -57,10 +51,7 @@ class _YoutubeSectionState extends State<YoutubeSection> {
                 child: YoutubePlayerIFrame(
                   controller: YoutubePlayerController(
                     initialVideoId: 'iMjZNl0LFYw',
-                    params: const YoutubePlayerParams(
-                      showControls: true,
-                      showFullscreenButton: true,
-                    ),
+                    params: _getYoutubePlayerParams(),
                   ),
                 ),
               )
@@ -70,6 +61,12 @@ class _YoutubeSectionState extends State<YoutubeSection> {
       ),
     );
   }
+
+  YoutubePlayerParams _getYoutubePlayerParams() => const YoutubePlayerParams(
+        showControls: true,
+        showFullscreenButton: true,
+        autoPlay: false,
+      );
 
   double _getHorizontalPadding(BuildContext context) {
     if (ResponsiveWidget.getScreenSizeId(context) == ResponsiveWidget.large) {

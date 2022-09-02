@@ -7,9 +7,14 @@ import 'package:gita_gitroops/widgets/header.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
 
 class PageScaffold extends StatelessWidget {
+  final bool scrollable;
   final Widget child;
 
-  const PageScaffold({Key? key, required this.child}) : super(key: key);
+  const PageScaffold({
+    Key? key,
+    required this.child,
+    this.scrollable = true,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -59,21 +64,35 @@ class PageScaffold extends StatelessWidget {
               ),
             )
           : null,
-      body: SingleChildScrollView(
-        child: Align(
-          alignment: Alignment.topCenter,
-          child: SizedBox(
-            width: 1440,
-            child: Column(
-              children: [
-                if (ResponsiveWidget.getScreenSizeId(context) >
-                    ResponsiveWidget.medium) ...[const Header()],
-                child,
-              ],
+      body: scrollable
+          ? SingleChildScrollView(
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: SizedBox(
+                  width: 1440,
+                  child: Column(
+                    children: [
+                      if (ResponsiveWidget.getScreenSizeId(context) >
+                          ResponsiveWidget.medium) ...[const Header()],
+                      child,
+                    ],
+                  ),
+                ),
+              ),
+            )
+          : Align(
+              alignment: Alignment.topCenter,
+              child: SizedBox(
+                width: 1440,
+                child: Column(
+                  children: [
+                    if (ResponsiveWidget.getScreenSizeId(context) >
+                        ResponsiveWidget.medium) ...[const Header()],
+                    Expanded(child: child),
+                  ],
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
     );
   }
 }
