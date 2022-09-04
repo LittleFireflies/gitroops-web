@@ -1,7 +1,6 @@
-import 'dart:js' as js;
-
 import 'package:flutter/material.dart';
 import 'package:gita_gitroops/data/models/theater_schedule.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class TheaterScheduleTile extends StatelessWidget {
   final TheaterSchedule schedule;
@@ -44,7 +43,7 @@ class TheaterScheduleTile extends StatelessWidget {
         ElevatedButton(
           onPressed: schedule.link.isNotEmpty
               ? () {
-                  js.context.callMethod('open', [schedule.link]);
+                  launchUrlString(schedule.link);
                 }
               : null,
           child: const Text('Beli'),

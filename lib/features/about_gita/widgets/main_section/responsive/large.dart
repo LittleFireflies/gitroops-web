@@ -1,7 +1,6 @@
-import 'dart:js' as js;
-
 import 'package:flutter/material.dart';
 import 'package:gita_gitroops/utils/constants.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class LargeMainSection extends StatelessWidget {
   const LargeMainSection({Key? key}) : super(key: key);
@@ -38,24 +37,21 @@ class LargeMainSection extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        js.context
-                            .callMethod('open', [AppConstants.twitterGita]);
+                        launchUrlString(AppConstants.twitterGita);
                       },
                       child: const Text('Twitter'),
                     ),
                     const SizedBox(width: 40),
                     ElevatedButton(
                       onPressed: () {
-                        js.context
-                            .callMethod('open', [AppConstants.instagramGita]);
+                        launchUrlString(AppConstants.instagramGita);
                       },
                       child: const Text('Instagram'),
                     ),
                     const SizedBox(width: 40),
                     ElevatedButton(
                       onPressed: () {
-                        js.context
-                            .callMethod('open', [AppConstants.tiktokGita]);
+                        launchUrlString(AppConstants.tiktokGita);
                       },
                       child: const Text('Tiktok'),
                     ),

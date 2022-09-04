@@ -1,7 +1,6 @@
-import 'dart:js' as js;
-
 import 'package:flutter/material.dart';
 import 'package:gita_gitroops/utils/constants.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SmallGitroopsProfileSection extends StatelessWidget {
   final String description;
@@ -39,20 +38,19 @@ class SmallGitroopsProfileSection extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  js.context.callMethod('open', [AppConstants.formGitroops]);
+                  launchUrlString(AppConstants.formGitroops);
                 },
                 child: const Text('Link Form'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  js.context
-                      .callMethod('open', [AppConstants.instagramGitroops]);
+                  launchUrlString(AppConstants.instagramGitroops);
                 },
                 child: const Text('Link IG'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  js.context.callMethod('open', [AppConstants.twitterGitroops]);
+                  launchUrlString(AppConstants.twitterGitroops);
                 },
                 child: const Text('Link Twitter'),
               ),

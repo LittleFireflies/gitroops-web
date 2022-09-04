@@ -1,5 +1,6 @@
 class AppConstants {
-  static const formGitroops = 'http://shorturl.at/nvK13 ';
+  static const formGitroops =
+      'https://docs.google.com/forms/d/e/1FAIpQLSexPWLPv-q4PumGuQYVGBVdcqaq9p494d_Fga31xv78a-qsFg/viewform';
   static const twitterGitroops = 'https://twitter.com/gitroops';
   static const instagramGitroops = 'https://www.instagram.com/gitroops/';
   static const jikoshoukai =
