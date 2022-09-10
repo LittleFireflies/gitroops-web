@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gita_gitroops/features/about_gita/view/about_gita_page.dart';
 import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_page.dart';
 import 'package:gita_gitroops/features/home/view/home_page.dart';
@@ -14,15 +15,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Gitroops #TheNewTroops',
-      theme: GitroopsTheme.mainTheme(),
-      initialRoute: HomePage.routeName,
-      routes: {
-        HomePage.routeName: (context) => const HomePage(),
-        AboutGitaPage.routeName: (context) => const AboutGitaPage(),
-        SchedulePage.routeName: (context) => const SchedulePage(),
-        AboutGitroopsPage.routeName: (context) => const AboutGitroopsPage(),
+    return ScreenUtilInit(
+      designSize: const Size(1440, 1024),
+      minTextAdapt: true,
+      builder: (context, child) {
+        return MaterialApp(
+          title: 'Gitroops #TheNewTroops',
+          theme: GitroopsTheme.mainTheme(),
+          initialRoute: HomePage.routeName,
+          routes: {
+            HomePage.routeName: (context) => const HomePage(),
+            AboutGitaPage.routeName: (context) => const AboutGitaPage(),
+            SchedulePage.routeName: (context) => const SchedulePage(),
+            AboutGitroopsPage.routeName: (context) => const AboutGitroopsPage(),
+          },
+        );
       },
     );
   }

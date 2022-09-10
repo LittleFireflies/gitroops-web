@@ -18,10 +18,10 @@ class _YoutubeSectionState extends State<YoutubeSection> {
       padding: EdgeInsets.symmetric(horizontal: _getHorizontalPadding(context)),
       child: Column(
         children: [
-          const Text(
+          Text(
             'KENALAN SAMA KAK GITA YUK!!!',
             style: TextStyle(
-              fontSize: 36,
+              fontSize: ResponsiveWidget.isSmallScreen(context) ? 18 : 36,
               fontWeight: FontWeight.w600,
             ),
           ),

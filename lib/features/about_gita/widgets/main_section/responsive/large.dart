@@ -41,14 +41,14 @@ class LargeMainSection extends StatelessWidget {
                       },
                       child: const Text('Twitter'),
                     ),
-                    const SizedBox(width: 40),
+                    const SizedBox(width: 24),
                     ElevatedButton(
                       onPressed: () {
                         launchUrlString(AppConstants.instagramGita);
                       },
                       child: const Text('Instagram'),
                     ),
-                    const SizedBox(width: 40),
+                    const SizedBox(width: 24),
                     ElevatedButton(
                       onPressed: () {
                         launchUrlString(AppConstants.tiktokGita);

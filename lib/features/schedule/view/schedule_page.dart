@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gita_gitroops/data/api/api_service.dart';
 import 'package:gita_gitroops/features/schedule/bloc/schedule_cubit.dart';
 import 'package:gita_gitroops/features/schedule/widgets/theater_schedule_tile.dart';
@@ -52,8 +53,8 @@ class ScheduleView extends StatelessWidget {
             const SizedBox(height: 40),
             Text(
               dateFormat.format(DateTime.now()),
-              style: const TextStyle(
-                fontSize: 36,
+              style: TextStyle(
+                fontSize: 36.h,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -71,9 +72,12 @@ class ScheduleView extends StatelessWidget {
                   ),
                 );
               } else if (state is ScheduleEmpty) {
-                return const Text(
+                return Text(
                   'Tidak ada jadwal tersedia saat ini',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24.h,
+                  ),
                 );
               } else {
                 return const CircularProgressIndicator();

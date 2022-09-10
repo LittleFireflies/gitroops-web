@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gita_gitroops/utils/constants.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -30,19 +31,19 @@ class LargeGitroopsProfileSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'Gitroops',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 36,
+                        fontSize: 36.h,
                       ),
                     ),
                     const SizedBox(height: 16),
                     Text(
                       description,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: 24,
+                        fontSize: 24.h,
                       ),
                     ),
                     const SizedBox(height: 16),
@@ -55,14 +56,14 @@ class LargeGitroopsProfileSection extends StatelessWidget {
                           },
                           child: const Text('Link Form'),
                         ),
-                        const SizedBox(width: 40),
+                        const SizedBox(width: 24),
                         ElevatedButton(
                           onPressed: () {
                             launchUrlString(AppConstants.instagramGitroops);
                           },
                           child: const Text('Link IG'),
                         ),
-                        const SizedBox(width: 40),
+                        const SizedBox(width: 24),
                         ElevatedButton(
                           onPressed: () {
                             launchUrlString(AppConstants.twitterGitroops);
