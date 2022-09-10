@@ -13,8 +13,6 @@ void main() {
   late Client client;
   late ApiService apiService;
 
-  const TheaterScheduleResponse response = TestModels.theaterScheduleResponse;
-
   setUp(() {
     client = MockHttpClient();
     apiService = ApiService(client);
@@ -32,8 +30,29 @@ void main() {
           200,
         ),
       );
+      const TheaterScheduleResponse response =
+          TestModels.theaterScheduleResponse;
 
       final result = await apiService.getTheaterSchedule();
+      expect(result, response);
+    },
+  );
+
+  test(
+    'should return stats response '
+    'when status code is 200',
+    () async {
+      when(() => client.get(Uri.parse(
+              'https://48-api-dot-my-playground-230006.el.r.appspot.com/gita-stats')))
+          .thenAnswer(
+        (_) async => Response(
+          readJson('test_models/gita_stats.json'),
+          200,
+        ),
+      );
+      const response = TestModels.statsResponse;
+
+      final result = await apiService.getGitaStats();
       expect(result, response);
     },
   );

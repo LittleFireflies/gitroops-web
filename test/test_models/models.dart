@@ -1,3 +1,4 @@
+import 'package:gita_gitroops/data/models/stats_response.dart';
 import 'package:gita_gitroops/data/models/theater_schedule.dart';
 import 'package:gita_gitroops/data/models/theater_schedule_response.dart';
 
@@ -10,5 +11,11 @@ class TestModels {
 
   static const theaterScheduleResponse = TheaterScheduleResponse(
     data: [theaterSchedule],
+  );
+
+  static const statsResponse = StatsResponse(
+    shows: 185,
+    setlists: 8,
+    unitSongs: 12,
   );
 }
