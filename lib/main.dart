@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gita_gitroops/features/about_gita/view/about_gita_page.dart';
@@ -6,9 +7,14 @@ import 'package:gita_gitroops/features/home/view/home_page.dart';
 import 'package:gita_gitroops/features/quiz/view/game/quiz_game_page.dart';
 import 'package:gita_gitroops/features/quiz/view/home/quiz_home_page.dart';
 import 'package:gita_gitroops/features/schedule/view/schedule_page.dart';
+import 'package:gita_gitroops/firebase_options.dart';
 import 'package:gita_gitroops/theme/theme.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MyApp());
 }
 
