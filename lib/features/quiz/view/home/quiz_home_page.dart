@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gita_gitroops/features/quiz/view/game/quiz_game_page.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
 
 class QuizHomePage extends StatelessWidget {
@@ -43,7 +44,9 @@ class QuizHomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, QuizGamePage.routeName);
+                  },
                   child: const Text('Mulai'),
                 ),
               ],
