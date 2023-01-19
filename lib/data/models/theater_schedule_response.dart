@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'theater_schedule_response.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class TheaterScheduleResponse extends Equatable {
   final List<TheaterSchedule> data;
 

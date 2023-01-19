@@ -113,8 +113,8 @@ List<Widget> _widgetList(BuildContext context) {
       },
       child: const Text('Explore'),
       style: ElevatedButton.styleFrom(
-        primary: const Color(0xFFD7932B),
-        onPrimary: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        foregroundColor: Theme.of(context).colorScheme.onSecondary,
       ),
     ),
   ];

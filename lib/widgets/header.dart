@@ -83,7 +83,7 @@ class NavItem extends StatelessWidget {
           ),
         ),
         style: TextButton.styleFrom(
-          primary: Colors.black,
+          foregroundColor: Colors.black,
         ),
       ),
     );

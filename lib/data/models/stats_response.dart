@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'stats_response.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class StatsResponse extends Equatable {
   final int shows;
   final int setlists;

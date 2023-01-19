@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'theater_schedule.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class TheaterSchedule extends Equatable {
   final String title;
   final String date;
