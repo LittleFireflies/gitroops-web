@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1010978308032-ahm0vts0h8sct2fckadhquqgmjdcipqo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1010978308032-ahm0vts0h8sct2fckadhquqgmjdcipqo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB4dFeS6BZpSRJLHrNOOQmeN06lRBkIIag</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1010978308032</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>dev.widdyjp.gitaGitroops</string>
+	<key>PROJECT_ID</key>
+	<string>gitroops-84d8e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gitroops-84d8e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1010978308032:ios:ba6a9058e8fb60f3cdd225</string>
+</dict>
+</plist>
