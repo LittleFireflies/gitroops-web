@@ -2,15 +2,25 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on PR
-'on': pull_request
+'on':
+  pull_request:
+    branches:
+      - 'main'
 jobs:
+  test_and_analyze:
+    uses: ./.github/workflows/ci.yaml
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
+    needs: test_and_analyze
     steps:
       - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+      - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GITROOPS_84D8E }}'
+          channelId: dev
+          expires: 7d
           projectId: gitroops-84d8e
