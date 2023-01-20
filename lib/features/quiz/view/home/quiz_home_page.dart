@@ -41,7 +41,12 @@ class QuizHomeView extends StatelessWidget {
             child: BlocListener<SetupQuizBloc, SetupQuizState>(
               listener: (context, state) {
                 if (state is QuizLoaded) {
-                  Navigator.pushNamed(context, QuizGamePage.routeName);
+                  final questions = state.questions;
+                  Navigator.pushNamed(
+                    context,
+                    QuizGamePage.routeName,
+                    arguments: questions,
+                  );
                 }
               },
               child: Column(

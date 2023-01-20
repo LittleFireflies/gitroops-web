@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gita_gitroops/features/about_gita/view/about_gita_page.dart';
 import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_page.dart';
 import 'package:gita_gitroops/features/home/view/home_page.dart';
+import 'package:gita_gitroops/features/quiz/domains/models/question.dart';
 import 'package:gita_gitroops/features/quiz/view/game/quiz_game_page.dart';
 import 'package:gita_gitroops/features/quiz/view/home/quiz_home_page.dart';
 import 'package:gita_gitroops/features/schedule/view/schedule_page.dart';
@@ -31,13 +32,37 @@ class MyApp extends StatelessWidget {
           title: 'Gitroops #TheNewTroops',
           theme: GitroopsTheme.mainTheme(),
           initialRoute: HomePage.routeName,
-          routes: {
-            HomePage.routeName: (context) => const HomePage(),
-            AboutGitaPage.routeName: (context) => const AboutGitaPage(),
-            SchedulePage.routeName: (context) => const SchedulePage(),
-            AboutGitroopsPage.routeName: (context) => const AboutGitroopsPage(),
-            QuizHomePage.routeName: (context) => const QuizHomePage(),
-            QuizGamePage.routeName: (context) => const QuizGamePage(),
+          onGenerateRoute: (RouteSettings settings) {
+            switch (settings.name) {
+              case HomePage.routeName:
+                return MaterialPageRoute(
+                    builder: (context) => const HomePage());
+              case AboutGitaPage.routeName:
+                return MaterialPageRoute(
+                    builder: (context) => const AboutGitaPage());
+              case SchedulePage.routeName:
+                return MaterialPageRoute(
+                    builder: (context) => const SchedulePage());
+              case AboutGitroopsPage.routeName:
+                return MaterialPageRoute(
+                    builder: (context) => const AboutGitroopsPage());
+              case QuizHomePage.routeName:
+                return MaterialPageRoute(
+                    builder: (context) => const QuizHomePage());
+              case QuizGamePage.routeName:
+                final questions = settings.arguments as List<Question>;
+
+                return MaterialPageRoute(
+                    builder: (context) => QuizGamePage(questions: questions));
+              default:
+                return MaterialPageRoute(builder: (_) {
+                  return const Scaffold(
+                    body: Center(
+                      child: Text('Page not found :('),
+                    ),
+                  );
+                });
+            }
           },
         );
       },

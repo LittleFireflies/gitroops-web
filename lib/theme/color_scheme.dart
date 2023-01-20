@@ -16,3 +16,9 @@ class GitroopsColorScheme {
     onSurface: Colors.grey,
   );
 }
+
+extension QuizzAppColorSchemeExtension on ColorScheme {
+  Color get green => Colors.green;
+
+  Color get red => Colors.red;
+}
