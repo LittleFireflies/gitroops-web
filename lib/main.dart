@@ -34,42 +34,24 @@ class MyApp extends StatelessWidget {
           title: 'Gitroops #TheNewTroops',
           theme: GitroopsTheme.mainTheme(),
           initialRoute: HomePage.routeName,
-          onGenerateRoute: (RouteSettings settings) {
-            switch (settings.name) {
-              case HomePage.routeName:
-                return MaterialPageRoute(
-                    builder: (context) => const HomePage());
-              case AboutGitaPage.routeName:
-                return MaterialPageRoute(
-                    builder: (context) => const AboutGitaPage());
-              case SchedulePage.routeName:
-                return MaterialPageRoute(
-                    builder: (context) => const SchedulePage());
-              case AboutGitroopsPage.routeName:
-                return MaterialPageRoute(
-                    builder: (context) => const AboutGitroopsPage());
-              case QuizHomePage.routeName:
-                return MaterialPageRoute(
-                    builder: (context) => const QuizHomePage());
-              case QuizGamePage.routeName:
-                final questions = settings.arguments as List<Question>;
+          routes: {
+            HomePage.routeName: (context) => const HomePage(),
+            AboutGitaPage.routeName: (context) => const AboutGitaPage(),
+            SchedulePage.routeName: (context) => const SchedulePage(),
+            AboutGitroopsPage.routeName: (context) => const AboutGitroopsPage(),
+            QuizHomePage.routeName: (context) => const QuizHomePage(),
+            QuizGamePage.routeName: (context) {
+              final questions =
+                  ModalRoute.of(context)!.settings.arguments as List<Question>;
 
-                return MaterialPageRoute(
-                    builder: (context) => QuizGamePage(questions: questions));
-              case QuizResultPage.routeName:
-                final results = settings.arguments as List<AnswerHistory>;
+              return QuizGamePage(questions: questions);
+            },
+            QuizResultPage.routeName: (context) {
+              final results = ModalRoute.of(context)!.settings.arguments
+                  as List<AnswerHistory>;
 
-                return MaterialPageRoute(
-                    builder: (context) => QuizResultPage(quizResults: results));
-              default:
-                return MaterialPageRoute(builder: (_) {
-                  return const Scaffold(
-                    body: Center(
-                      child: Text('Page not found :('),
-                    ),
-                  );
-                });
-            }
+              return QuizResultPage(quizResults: results);
+            },
           },
         );
       },
