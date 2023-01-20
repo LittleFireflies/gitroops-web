@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gita_gitroops/features/quiz/bloc/quiz/quiz_bloc.dart';
 import 'package:gita_gitroops/features/quiz/domains/models/question.dart';
+import 'package:gita_gitroops/features/quiz/view/quiz_result/quiz_result_page.dart';
 import 'package:gita_gitroops/features/quiz/widgets/answer_card.dart';
 import 'package:gita_gitroops/features/quiz/widgets/question_card.dart';
 import 'package:gita_gitroops/widgets/shared_widgets/quizz_primary_button.dart';
@@ -37,13 +38,13 @@ class QuizGameView extends StatelessWidget {
           width: 480,
           child: BlocConsumer<QuizBloc, QuizState>(
             listener: (context, state) {
-              // if (state.isFinished) {
-              // Navigator.pushReplacementNamed(
-              //   context,
-              //   QuizResultPage.routeName,
-              //   arguments: state.quizResult,
-              // );
-              // }
+              if (state.isFinished) {
+                Navigator.pushReplacementNamed(
+                  context,
+                  QuizResultPage.routeName,
+                  arguments: state.quizResult,
+                );
+              }
             },
             builder: (context, state) {
               final activeQuestion = state.questions[state.activeQuestionIndex];

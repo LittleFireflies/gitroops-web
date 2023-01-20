@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gita_gitroops/features/about_gita/view/about_gita_page.dart';
 import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_page.dart';
 import 'package:gita_gitroops/features/home/view/home_page.dart';
+import 'package:gita_gitroops/features/quiz/domains/models/answer_history.dart';
 import 'package:gita_gitroops/features/quiz/domains/models/question.dart';
 import 'package:gita_gitroops/features/quiz/view/game/quiz_game_page.dart';
 import 'package:gita_gitroops/features/quiz/view/home/quiz_home_page.dart';
+import 'package:gita_gitroops/features/quiz/view/quiz_result/quiz_result_page.dart';
 import 'package:gita_gitroops/features/schedule/view/schedule_page.dart';
 import 'package:gita_gitroops/firebase_options.dart';
 import 'package:gita_gitroops/theme/theme.dart';
@@ -54,6 +56,11 @@ class MyApp extends StatelessWidget {
 
                 return MaterialPageRoute(
                     builder: (context) => QuizGamePage(questions: questions));
+              case QuizResultPage.routeName:
+                final results = settings.arguments as List<AnswerHistory>;
+
+                return MaterialPageRoute(
+                    builder: (context) => QuizResultPage(quizResults: results));
               default:
                 return MaterialPageRoute(builder: (_) {
                   return const Scaffold(
