@@ -14,4 +14,5 @@ Pada tanggal 27 April 2019, Gita dipromosikan sebagai member JKT48 team K3 dalam
   static const twitterGita = 'https://twitter.com/A_GitaJKT48';
   static const instagramGita = 'https://www.instagram.com/jkt48gita/';
   static const tiktokGita = 'https://www.tiktok.com/@gitajkt48/';
+  static const quizRoute = 'quiz';
 }

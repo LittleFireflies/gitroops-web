@@ -1,7 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gita_gitroops/features/quiz/domains/models/answer_history.dart';
 import 'package:gita_gitroops/features/quiz/widgets/answer_history_view.dart';
 import 'package:gita_gitroops/theme/color_scheme.dart';
+import 'package:gita_gitroops/utils/constants.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -58,7 +61,19 @@ class QuizResultPage extends StatelessWidget {
                       ElevatedButton(
                         child: const Text('Share your score'),
                         onPressed: () {
-                          Share.share(_getShareText(quizResults));
+                          if (kIsWeb) {
+                            Clipboard.setData(
+                              ClipboardData(
+                                text: _getShareText(quizResults),
+                              ),
+                            ).then((_) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Disalin ke clipboard')));
+                            });
+                          } else {
+                            Share.share(_getShareText(quizResults));
+                          }
                         },
                       ),
                       const SizedBox(height: 16),
@@ -93,6 +108,6 @@ class QuizResultPage extends StatelessWidget {
   }
 
   String _getShareText(List<AnswerHistory> results) {
-    return 'Hey, I got ${results.getCorrectAnswerCount()}/${results.length} score on Quizz App. How about you?';
+    return 'Saya ${results.getCorrectAnswerCount()}/${results.length} tahu tentang Gita. Kalau kamu seberapa tahu tentang Gita?\n\n\n${Uri.base}${AppConstants.quizRoute}';
   }
 }
