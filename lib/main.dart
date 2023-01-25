@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:gita_gitroops/features/about_gita/view/about_gita_page.dart';
 import 'package:gita_gitroops/features/about_gitroops/view/about_gitroops_page.dart';
 import 'package:gita_gitroops/features/home/view/home_page.dart';
@@ -17,6 +18,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  usePathUrlStrategy();
 
   runApp(const MyApp());
 }
