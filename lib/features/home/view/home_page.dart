@@ -41,7 +41,7 @@ class SmallHomeView extends StatelessWidget {
         Center(
           child: Container(
             width: MediaQuery.of(context).size.width,
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
             margin: const EdgeInsets.only(bottom: 24),
             padding: const EdgeInsets.all(8.0),
             child: Column(
