@@ -50,7 +50,7 @@ class _YoutubeSectionState extends State<YoutubeSection> {
               Expanded(
                 child: YoutubePlayerIFrame(
                   controller: YoutubePlayerController(
-                    initialVideoId: 'iMjZNl0LFYw',
+                    initialVideoId: 'o6yNncCaQ6c',
                     params: _getYoutubePlayerParams(),
                   ),
                 ),
