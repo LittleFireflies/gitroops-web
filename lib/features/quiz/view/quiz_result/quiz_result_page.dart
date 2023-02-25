@@ -109,6 +109,14 @@ class QuizResultPage extends StatelessWidget {
   }
 
   String _getShareText(List<AnswerHistory> results) {
-    return 'Saya ${results.getCorrectAnswerCount()}/${results.length} tahu tentang Gita. Kalau kamu seberapa tahu tentang Gita?\n\nCoba quiz-nya di :\n${Uri.base.origin}${QuizHomePage.routeName}';
+    String title;
+
+    if (results.getCorrectAnswerCount() >= 10) {
+      title = 'Si Paling Gita';
+    } else {
+      title = '';
+    }
+
+    return '${title.isNotEmpty ? '"$title"\n\n' : ''}Saya ${results.getCorrectAnswerCount()}/${results.length} tahu tentang Gita. Kalau kamu seberapa tahu tentang @A_GitaJKT48?\n\nCoba quiz-nya di :\n${Uri.base.origin}${QuizHomePage.routeName}';
   }
 }
