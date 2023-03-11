@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gita_gitroops/data/api/api_service.dart';
-import 'package:gita_gitroops/features/schedule/bloc/schedule_cubit.dart';
+import 'package:gita_gitroops/features/schedule/bloc/theater/schedule_cubit.dart';
 import 'package:gita_gitroops/features/schedule/widgets/theater_schedule_tile.dart';
 import 'package:gita_gitroops/widgets/page_scaffold.dart';
 import 'package:gita_gitroops/widgets/responsive_widget.dart';
