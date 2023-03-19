@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gita_gitroops/data/models/theater_schedule.dart';
+import 'package:gita_gitroops/data/models/theater_schedule/theater_schedule.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class TheaterScheduleTile extends StatelessWidget {

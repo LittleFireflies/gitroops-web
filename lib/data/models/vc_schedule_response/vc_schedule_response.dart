@@ -1,4 +1,4 @@
-import 'package:gita_gitroops/data/models/vc_schedule.dart';
+import 'package:gita_gitroops/data/models/vc_schedule/vc_schedule.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'vc_schedule_response.g.dart';
@@ -17,5 +17,4 @@ class VcScheduleResponse {
       _$VcScheduleResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$VcScheduleResponseToJson(this);
-
 }

@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:gita_gitroops/data/models/stats_response.dart';
-import 'package:gita_gitroops/data/models/theater_schedule_response.dart';
-import 'package:gita_gitroops/data/models/vc_schedule_response.dart';
+import 'package:gita_gitroops/data/models/stats_response/stats_response.dart';
+import 'package:gita_gitroops/data/models/theater_schedule_response/theater_schedule_response.dart';
+import 'package:gita_gitroops/data/models/vc_schedule_response/vc_schedule_response.dart';
 import 'package:http/http.dart';
 
 class ApiService {

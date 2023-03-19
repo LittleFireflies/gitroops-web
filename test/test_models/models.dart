@@ -1,6 +1,6 @@
-import 'package:gita_gitroops/data/models/stats_response.dart';
-import 'package:gita_gitroops/data/models/theater_schedule.dart';
-import 'package:gita_gitroops/data/models/theater_schedule_response.dart';
+import 'package:gita_gitroops/data/models/stats_response/stats_response.dart';
+import 'package:gita_gitroops/data/models/theater_schedule/theater_schedule.dart';
+import 'package:gita_gitroops/data/models/theater_schedule_response/theater_schedule_response.dart';
 import 'package:gita_gitroops/features/quiz/domains/models/question.dart';
 
 class TestModels {

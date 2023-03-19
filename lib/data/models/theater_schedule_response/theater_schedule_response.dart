@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:gita_gitroops/data/models/theater_schedule.dart';
+import 'package:gita_gitroops/data/models/theater_schedule/theater_schedule.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'theater_schedule_response.g.dart';

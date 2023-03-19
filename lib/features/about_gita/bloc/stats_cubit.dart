@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:gita_gitroops/data/api/api_service.dart';
-import 'package:gita_gitroops/data/models/stats_response.dart';
+import 'package:gita_gitroops/data/models/stats_response/stats_response.dart';
 
 part 'stats_state.dart';
 
