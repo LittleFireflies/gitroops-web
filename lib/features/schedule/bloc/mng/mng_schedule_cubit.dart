@@ -17,10 +17,10 @@ class MngScheduleCubit extends Cubit<MngScheduleState> {
 
     final response = await _apiService.getMngSchedule();
 
-    if (response.data.isEmpty) {
-      emit(const MngScheduleEmpty());
-    } else {
-      emit(MngScheduleLoaded(response.title, response.data));
-    }
+    emit(MngScheduleLoaded(
+      response.title,
+      response.data.mng,
+      response.data.twoShot,
+    ));
   }
 }

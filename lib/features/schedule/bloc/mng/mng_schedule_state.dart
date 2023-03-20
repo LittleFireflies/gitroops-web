@@ -13,20 +13,19 @@ class MngScheduleLoading extends MngScheduleState {
 
 class MngScheduleLoaded extends MngScheduleState {
   final String title;
-  final List<VcSchedule> schedules;
+  final List<VcSchedule> mngSchedule;
+  final List<VcSchedule> twoShotSchedule;
 
   const MngScheduleLoaded(
     this.title,
-    this.schedules,
+    this.mngSchedule,
+    this.twoShotSchedule,
   );
 
   @override
-  List<Object?> get props => [title, schedules];
-}
-
-class MngScheduleEmpty extends MngScheduleState {
-  const MngScheduleEmpty();
-
-  @override
-  List<Object?> get props => [];
+  List<Object?> get props => [
+        title,
+        mngSchedule,
+        twoShotSchedule,
+      ];
 }

@@ -159,28 +159,114 @@ class ScheduleView extends StatelessWidget {
               ),
             ),
             BlocBuilder<MngScheduleCubit, MngScheduleState>(
-                builder: (context, state) {
-              if (state is MngScheduleLoaded) {
-                return SizedBox(
-                  width: 600,
-                  child: Column(
-                    children: state.schedules
-                        .map((schedule) => MngScheduleTile(schedule: schedule))
-                        .toList(),
+              builder: (context, state) {
+                if (state is MngScheduleLoaded) {
+                  if (state.mngSchedule.isEmpty) {
+                    return Text(
+                      'Tidak ada jadwal tersedia saat ini',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 24.h,
+                      ),
+                    );
+                  }
+
+                  return SizedBox(
+                    width: 600,
+                    child: Column(
+                      children: state.mngSchedule
+                          .map(
+                              (schedule) => MngScheduleTile(schedule: schedule))
+                          .toList(),
+                    ),
+                  );
+                } else {
+                  return const CircularProgressIndicator();
+                }
+              },
+            ),
+            const SizedBox(height: 40),
+            const Text(
+              '2Shot',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 24,
+              ),
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: 600,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Expanded(
+                    child: Text(
+                      'Sesi',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 24,
+                      ),
+                    ),
                   ),
-                );
-              } else if (state is ScheduleEmpty) {
-                return Text(
-                  'Tidak ada jadwal tersedia saat ini',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 24.h,
+                  Expanded(
+                    child: Text(
+                      'Jalur',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 24,
+                      ),
+                    ),
                   ),
-                );
-              } else {
-                return const CircularProgressIndicator();
-              }
-            }),
+                  Expanded(
+                    child: Text(
+                      'Waktu Mulai',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      'Beli',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 24,
+                      ),
+                      textAlign: TextAlign.end,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            BlocBuilder<MngScheduleCubit, MngScheduleState>(
+              builder: (context, state) {
+                if (state is MngScheduleLoaded) {
+                  if (state.twoShotSchedule.isEmpty) {
+                    return Text(
+                      'Tidak ada jadwal tersedia saat ini',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 24.h,
+                      ),
+                    );
+                  }
+
+                  return SizedBox(
+                    width: 600,
+                    child: Column(
+                      children: state.twoShotSchedule
+                          .map(
+                              (schedule) => MngScheduleTile(schedule: schedule))
+                          .toList(),
+                    ),
+                  );
+                } else {
+                  return const CircularProgressIndicator();
+                }
+              },
+            ),
             const SizedBox(height: 80),
           ],
         ),
@@ -200,7 +286,7 @@ class MngScheduleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           child: Text(
@@ -233,7 +319,14 @@ class MngScheduleTile extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerRight,
             child: schedule.isSoldOut
-                ? const Text('Sold Out')
+                ? const Text(
+                    'Sold Out',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                      color: Colors.red,
+                    ),
+                  )
                 : ElevatedButton(
                     onPressed: schedule.link.isNotEmpty
                         ? () {
