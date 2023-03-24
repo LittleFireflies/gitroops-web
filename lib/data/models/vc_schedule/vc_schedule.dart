@@ -27,24 +27,5 @@ class VcSchedule extends Equatable {
   Map<String, dynamic> toJson() => _$VcScheduleToJson(this);
 
   @override
-  List<Object?> get props =>
-      [
-        name,
-        session,
-        track,
-        time,
-        isSoldOut,
-        link
-      ];
-
-  Map<String, dynamic> toMap() {
-    return {
-      'name': this.name,
-      'session': this.session,
-      'track': this.track,
-      'time': this.time,
-      'isSoldOut': this.isSoldOut,
-      'link': this.link,
-    };
-  }
+  List<Object?> get props => [name, session, track, time, isSoldOut, link];
 }
