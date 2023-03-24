@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gita_gitroops/data/api/api_service.dart';
-import 'package:gita_gitroops/data/models/theater_schedule_response.dart';
+import 'package:gita_gitroops/data/models/theater_schedule_response/theater_schedule_response.dart';
 import 'package:http/http.dart';
 import 'package:mocktail/mocktail.dart';
 

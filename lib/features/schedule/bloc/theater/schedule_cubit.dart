@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:gita_gitroops/data/api/api_service.dart';
-import 'package:gita_gitroops/data/models/theater_schedule.dart';
+import 'package:gita_gitroops/data/models/theater_schedule/theater_schedule.dart';
 
 part 'schedule_state.dart';
 
