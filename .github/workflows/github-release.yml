@@ -1,0 +1,71 @@
+name: 'Create release from milestone '
+
+on:
+  milestone:
+    types: [ closed ]
+
+jobs:
+  create_release_notes:
+    runs-on: ubuntu-latest
+    outputs:
+      notes: ${{ steps.release_notes.outputs.notes }}
+      name: ${{ steps.release_notes.outputs.name }}
+      skip: ${{ steps.release_notes.outputs.skip }}
+    steps:
+      - name: Create release notes
+        id: release_notes
+        uses: actions/github-script@v5
+        with:
+          script: |
+            core.info(`Preparing release..`);
+
+            const milestone = context.payload.milestone;
+
+            if(milestone.state == 'closed'){
+              core.setOutput('skip', 'false');
+            } else {
+              core.setOutput('skip', 'true');
+              core.info(`Milestone isn't closed, but ${milestone.state}. Skipping..`);
+              return;
+            }
+
+            core.info(`Featching issues of milestone ${milestone.title}..`);
+
+            const issuesList = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              milestone: milestone.number,
+              state: 'all',
+            });
+
+            const issues = issuesList.data.map((issue) => ({
+              number: issue.number,
+              title: issue.title,
+              name: issue.user.login,
+            }));
+
+            core.info(`Printing the issues of ${milestone.title}..`);
+            console.log(issues);
+
+            core.info(`Creating draft release notes for ${milestone.title}..`);
+
+            let releaseNotes = '## Release notes 🚀   \n';
+            issues.forEach(issue => releaseNotes += `- ${issue.title} @${issue.name} (#${issue.number})  \n`);
+
+            core.info(releaseNotes);
+
+            core.setOutput('name', milestone.title);
+            core.setOutput('notes', releaseNotes);
+
+      - name: Create draft release
+        if: ${{ steps.release_notes.outputs.skip == 'false' }}
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          tag_name: ${{steps.release_notes.outputs.name}}
+          release_name: ${{steps.release_notes.outputs.name}}
+          body: ${{steps.release_notes.outputs.notes}}
+          draft: true
+          prerelease: false
