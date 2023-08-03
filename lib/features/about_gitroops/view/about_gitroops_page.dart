@@ -10,11 +10,11 @@ class AboutGitroopsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageScaffold(
+    return const PageScaffold(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 48),
+        padding: EdgeInsets.symmetric(vertical: 48),
         child: Column(
-          children: const [
+          children: [
             GitroopsProfileSection(),
             SizedBox(height: 80),
             GitroopsGallerySection()
