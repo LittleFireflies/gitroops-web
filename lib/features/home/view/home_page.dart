@@ -111,11 +111,11 @@ List<Widget> _widgetList(BuildContext context) {
       onPressed: () {
         Navigator.pushNamed(context, AboutGitaPage.routeName);
       },
-      child: const Text('Explore'),
       style: ElevatedButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.secondary,
         foregroundColor: Theme.of(context).colorScheme.onSecondary,
       ),
+      child: const Text('Explore'),
     ),
   ];
 }

@@ -27,9 +27,9 @@ class _YoutubeSectionState extends State<YoutubeSection> {
           ),
           const SizedBox(height: 22),
           SizedBox(
-            child: YoutubePlayerIFrame(
-              controller: YoutubePlayerController(
-                initialVideoId: 'd1Hr6J22FWk',
+            child: YoutubePlayer(
+              controller: YoutubePlayerController.fromVideoId(
+                videoId: 'd1Hr6J22FWk',
                 params: _getYoutubePlayerParams(),
               ),
               aspectRatio: 16 / 9,
@@ -39,24 +39,25 @@ class _YoutubeSectionState extends State<YoutubeSection> {
           Row(
             children: [
               Expanded(
-                child: YoutubePlayerIFrame(
-                  controller: YoutubePlayerController(
-                    initialVideoId: '5o0ockfSOK4',
+                child: YoutubePlayer(
+                  controller: YoutubePlayerController.fromVideoId(
+                    videoId: '5o0ockfSOK4',
                     params: _getYoutubePlayerParams(),
                   ),
                 ),
               ),
               const SizedBox(width: 16),
               Expanded(
-                child: YoutubePlayerIFrame(
-                  controller: YoutubePlayerController(
-                    initialVideoId: 'o6yNncCaQ6c',
+                child: YoutubePlayer(
+                  controller: YoutubePlayerController.fromVideoId(
+                    videoId: 'iMjZNl0LFYw',
                     params: _getYoutubePlayerParams(),
                   ),
                 ),
               )
             ],
-          )
+          ),
+          const SizedBox(height: 32),
         ],
       ),
     );
@@ -65,7 +66,6 @@ class _YoutubeSectionState extends State<YoutubeSection> {
   YoutubePlayerParams _getYoutubePlayerParams() => const YoutubePlayerParams(
         showControls: true,
         showFullscreenButton: true,
-        autoPlay: false,
       );
 
   double _getHorizontalPadding(BuildContext context) {

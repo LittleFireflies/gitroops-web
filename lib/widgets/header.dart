@@ -81,6 +81,9 @@ class NavItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: TextButton(
         onPressed: onPressed,
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.black,
+        ),
         child: Text(
           text,
           style: TextStyle(
@@ -88,9 +91,6 @@ class NavItem extends StatelessWidget {
             fontWeight: FontWeight.w500,
             color: Theme.of(context).colorScheme.primary,
           ),
-        ),
-        style: TextButton.styleFrom(
-          foregroundColor: Colors.black,
         ),
       ),
     );

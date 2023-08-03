@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gita_gitroops/data/api/api_service.dart';
 import 'package:gita_gitroops/data/models/theater_schedule/theater_schedule.dart';
 

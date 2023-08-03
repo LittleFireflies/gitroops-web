@@ -112,12 +112,12 @@ class ScheduleView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            SizedBox(
+            const SizedBox(
               width: 600,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Expanded(
                     child: Text(
                       'Sesi',
@@ -194,12 +194,12 @@ class ScheduleView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            SizedBox(
+            const SizedBox(
               width: 600,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Expanded(
                     child: Text(
                       'Sesi',
