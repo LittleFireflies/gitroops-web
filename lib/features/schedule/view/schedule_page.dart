@@ -98,179 +98,192 @@ class ScheduleView extends StatelessWidget {
                 return const CircularProgressIndicator();
               }
             }),
-            const SizedBox(height: 80),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset('assets/mng_fest_nice_to_see_you.jpg'),
-            ),
-            const SizedBox(height: 40),
-            const Text(
-              'Meet & Greet',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 24,
-              ),
-            ),
-            const SizedBox(height: 20),
-            const SizedBox(
-              width: 600,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Sesi',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      'Jalur',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      'Waktu Mulai',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      'Beli',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                      textAlign: TextAlign.end,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            BlocBuilder<MngScheduleCubit, MngScheduleState>(
-              builder: (context, state) {
-                if (state is MngScheduleLoaded) {
-                  if (state.mngSchedule.isEmpty) {
-                    return Text(
-                      'Tidak ada jadwal tersedia saat ini',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24.h,
-                      ),
-                    );
-                  }
-
-                  return SizedBox(
-                    width: 600,
-                    child: Column(
-                      children: state.mngSchedule
-                          .map(
-                              (schedule) => MngScheduleTile(schedule: schedule))
-                          .toList(),
-                    ),
-                  );
-                } else {
-                  return const CircularProgressIndicator();
-                }
-              },
-            ),
-            const SizedBox(height: 40),
-            const Text(
-              '2Shot',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 24,
-              ),
-            ),
-            const SizedBox(height: 20),
-            const SizedBox(
-              width: 600,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Sesi',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      'Jalur',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      'Waktu Mulai',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      'Beli',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                      textAlign: TextAlign.end,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            BlocBuilder<MngScheduleCubit, MngScheduleState>(
-              builder: (context, state) {
-                if (state is MngScheduleLoaded) {
-                  if (state.twoShotSchedule.isEmpty) {
-                    return Text(
-                      'Tidak ada jadwal tersedia saat ini',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24.h,
-                      ),
-                    );
-                  }
-
-                  return SizedBox(
-                    width: 600,
-                    child: Column(
-                      children: state.twoShotSchedule
-                          .map(
-                              (schedule) => MngScheduleTile(schedule: schedule))
-                          .toList(),
-                    ),
-                  );
-                } else {
-                  return const CircularProgressIndicator();
-                }
-              },
-            ),
+            // const MngView(),
             const SizedBox(height: 80),
           ],
         ),
       ),
+    );
+  }
+}
+
+class MngView extends StatelessWidget {
+  const MngView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const SizedBox(height: 80),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Image.asset('assets/mng_fest_nice_to_see_you.jpg'),
+        ),
+        const SizedBox(height: 40),
+        const Text(
+          'Meet & Greet',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 24,
+          ),
+        ),
+        const SizedBox(height: 20),
+        const SizedBox(
+          width: 600,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Text(
+                  'Sesi',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  'Jalur',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  'Waktu Mulai',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  'Beli',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                  ),
+                  textAlign: TextAlign.end,
+                ),
+              ),
+            ],
+          ),
+        ),
+        BlocBuilder<MngScheduleCubit, MngScheduleState>(
+          builder: (context, state) {
+            if (state is MngScheduleLoaded) {
+              if (state.mngSchedule.isEmpty) {
+                return Text(
+                  'Tidak ada jadwal tersedia saat ini',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24.h,
+                  ),
+                );
+              }
+
+              return SizedBox(
+                width: 600,
+                child: Column(
+                  children: state.mngSchedule
+                      .map((schedule) => MngScheduleTile(schedule: schedule))
+                      .toList(),
+                ),
+              );
+            } else {
+              return const CircularProgressIndicator();
+            }
+          },
+        ),
+        const SizedBox(height: 40),
+        const Text(
+          '2Shot',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 24,
+          ),
+        ),
+        const SizedBox(height: 20),
+        const SizedBox(
+          width: 600,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Text(
+                  'Sesi',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  'Jalur',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  'Waktu Mulai',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  'Beli',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 24,
+                  ),
+                  textAlign: TextAlign.end,
+                ),
+              ),
+            ],
+          ),
+        ),
+        BlocBuilder<MngScheduleCubit, MngScheduleState>(
+          builder: (context, state) {
+            if (state is MngScheduleLoaded) {
+              if (state.twoShotSchedule.isEmpty) {
+                return Text(
+                  'Tidak ada jadwal tersedia saat ini',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24.h,
+                  ),
+                );
+              }
+
+              return SizedBox(
+                width: 600,
+                child: Column(
+                  children: state.twoShotSchedule
+                      .map((schedule) => MngScheduleTile(schedule: schedule))
+                      .toList(),
+                ),
+              );
+            } else {
+              return const CircularProgressIndicator();
+            }
+          },
+        ),
+      ],
     );
   }
 }
