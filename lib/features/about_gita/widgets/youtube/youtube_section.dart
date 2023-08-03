@@ -50,13 +50,14 @@ class _YoutubeSectionState extends State<YoutubeSection> {
               Expanded(
                 child: YoutubePlayer(
                   controller: YoutubePlayerController.fromVideoId(
-                    videoId: 'o6yNncCaQ6c',
+                    videoId: 'iMjZNl0LFYw',
                     params: _getYoutubePlayerParams(),
                   ),
                 ),
               )
             ],
-          )
+          ),
+          const SizedBox(height: 32),
         ],
       ),
     );
